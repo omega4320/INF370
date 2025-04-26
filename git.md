@@ -4,7 +4,7 @@
 
 `git init .`
 
-## Update your repo
+## Update your repo (locally)
 
 1. Stage all wanted changes
 2. Enter a message containing what was changed
