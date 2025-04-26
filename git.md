@@ -13,3 +13,6 @@
 ## Update on Github (remote)
 
 1. Hit sync
+
+## How to bring remote updates to local
+
