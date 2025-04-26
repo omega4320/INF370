@@ -5,7 +5,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=YourStrongRootPassword
       - MYSQL_DATABASE=your_database
-      - MYSQL_USER=your_user
+      - MYSQL_USER=your_userthsi breaks things
       - MYSQL_PASSWORD=your_user_password
     ports:
       - "3306:3306"
