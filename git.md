@@ -17,3 +17,5 @@
 ## How to bring remote updates to local
 
 1. Hit sync changes
+
+lalalalala
