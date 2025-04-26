@@ -3,7 +3,7 @@ services:
     image: mariadb:latest
     container_name: mariadb
     environment:
-      - MYSQL_ROOT_PASSWORD=YourStrongRootPassword
+      - MYSQL_ROOT_PASSWORD=imagirl
       - MYSQL_DATABASE=your_database
       - MYSQL_USER=your_user
       - MYSQL_PASSWORD=your_user_password
