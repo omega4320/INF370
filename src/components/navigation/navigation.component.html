@@ -1,0 +1,83 @@
+
+<mat-drawer-container class="example-container" autosize>
+  <!-- Sidebar -->
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <div class="sidenav-content">
+      <div class="logo-container">
+        <img src="assets/PetCare_Logo/PetCare Logo.svg" alt="Logo" class="mb-4" style="max-width: 150px;">
+      </div>
+  
+      <mat-nav-list class="nav-list">
+        @for (item of menuItems(); track item.label) {
+          <div>
+            <a
+              mat-list-item
+              (click)="item.subItems ? toggleSubmenu(item) : navigate(item)"
+              [routerLink]="item.path"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+              {{ item.label }}
+              <span class="spacer"></span>
+
+              @if (item.subItems) {
+                <span matListItemMeta>
+                  <mat-icon>{{ item.expanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+                </span>
+              }
+            </a>
+      
+            @if (item.expanded && item.subItems) {
+              <div class="submenu">
+                @for (sub of item.subItems; track sub.label) {
+                  <a
+                    mat-list-item
+                    class="sub-item indented"
+                    (click)="navigate(sub)"
+                    [routerLink]="sub.path"
+                    routerLinkActive="active-link"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
+                    <mat-icon matListItemIcon>{{ sub.icon }}</mat-icon>
+                    {{ sub.label }}
+                  </a>
+                }
+              </div>
+            }
+            
+            <mat-divider class="divider"></mat-divider>
+          </div>
+        }
+      </mat-nav-list>
+      
+    </div>
+  </mat-drawer>
+
+
+  <!-- Main Content including Toolbar and Router Outlet -->
+  <div class="main-content">
+    <mat-toolbar>
+ 
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="user-Title">Admin</span>
+      <span class="icon-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <span class="button-spacer"></span>
+      <button mat-icon-button (click)="logOut()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+  
+
+</mat-drawer-container>

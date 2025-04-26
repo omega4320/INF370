@@ -1,0 +1,93 @@
+
+// Toolbar styling start
+.icon-spacer {
+    flex: 1 1 auto;
+  }
+
+  
+.button-spacer {
+    flex: 0.02 auto;
+}
+  
+mat-toolbar {
+    height: 80px;
+    background:  #e3f2fd;
+    
+}
+
+.user-Title {
+  font-weight: normal;
+}
+// Toolbar styling end
+
+
+// Sidebar styling start
+.example-sidenav {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  justify-content: space-between;
+  padding: 24px;
+  width: 300px;
+  background: #cae5f8;
+  // border-radius: 0%; 
+}
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.nav-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+a {
+  margin-bottom: 16px;
+  // border-radius: 0 !important;
+  padding: 10px 16px;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    // background-color: #a7d4f3; 
+    background-color: #99c8e8; 
+  }
+}
+
+.example-container {
+    height: 100%;
+  }
+  
+
+  .active-link {
+    background-color: #99c8e8;
+    font-weight: bold;
+  }
+
+
+  //Sub-Item styling
+  .submenu {
+    padding-left: 40px;
+ 
+  }
+  
+  .sub-item {
+    font-size: 16px;
+    padding-left: 16px;
+  }
+  
+
+
+// Sidebar styling end
