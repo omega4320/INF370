@@ -1,11 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+
+// SideNav Components
+import { LoginComponent } from './authentication/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageJobsComponent } from './manage-jobs/manage-jobs.component';
-import { ManageEmployeesComponent } from './manage-employees/manage-employees.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { ClientsComponent } from './clients/clients.component';
+
 import { NavigationComponent } from '../components/navigation/navigation.component';
-import { AdministrationComponent } from './administration/administration.component';
+
+// Administration components
+import { ServicesComponent } from './administration/services/services.component';
+import { EmployeeTypeComponent } from './administration/employee-type/employee-type.component';
+import { LocationComponent } from './administration/location/location.component';
+import { AuditTrailComponent } from './administration/audit-trail/audit-trail.component';
+import { HelpComponent } from './administration/help/help.component';
+
 
 const routes: Routes = [
 
@@ -15,10 +26,23 @@ const routes: Routes = [
     path:'',
     component: NavigationComponent,  //navigation layout wraps child views
     children:[
+
       {path:'dashboard', component: DashboardComponent},
       {path:'manage-jobs', component: ManageJobsComponent},
-      {path:'manage-employees', component: ManageEmployeesComponent},
-      {path:'administration', component: AdministrationComponent},
+      {path:'employees', component: EmployeesComponent},
+      {path:'clients', component: ClientsComponent},
+      
+      {
+        path: 'administration',
+        children: [
+          { path: 'services', component: ServicesComponent },
+          { path: 'employee-type', component: EmployeeTypeComponent},
+          { path: 'location', component: LocationComponent },
+          { path: 'audit-trail', component: AuditTrailComponent },
+          { path: 'help', component: HelpComponent }
+        ]
+      }
+
     ]
   }
 

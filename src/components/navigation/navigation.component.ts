@@ -42,13 +42,13 @@ export class NavigationComponent {
     },
     { 
       label: 'Employees', 
-      path: '/manage-employees', 
+      path: '/employees', 
       isActive: false, 
       icon: 'person' 
     },
     { 
       label: 'Clients', 
-      path: '/manage-clients', 
+      path: '/clients', 
       isActive: false, 
       icon: 'peopleoutline' 
     },
@@ -64,27 +64,20 @@ export class NavigationComponent {
       isActive: false, 
       icon: 'timeline' 
     },
-    { 
-      label: 'Location', 
-      isActive: false, 
-      icon: 'place',
-      subItems: [
-        { label: 'Province', path: '/province', isActive: false, icon: 'public' },
-        { label: 'City', path: '/city', isActive: false, icon: 'public' },
-        { label: 'Suburb', path: '/suburb', isActive: false, icon: 'public' },
-        
-      ]
-    },
+    
     {
       label: 'Administration',
       isActive: false,
       icon: 'settings',
       expanded: false,
       subItems: [
+
         { label: 'Services', path: '/administration/services', isActive: false, icon: 'build' },
-        { label: 'Accounts', path: '/administration/accounts', isActive: false, icon: 'manage_accounts' },
+        { label: 'Employee Type', path: '/administration/employee-type', isActive: false, icon: 'manage_accounts' },
+        { label: 'Location', path: '/administration/location', isActive: false, icon: 'place' },
         { label: 'Audit Trail', path: '/administration/audit-trail', isActive: false, icon: 'policy' },
         { label: 'View Help', path: '/administration/help', isActive: false, icon: 'info' },
+        
       ]
     }
   ]);
